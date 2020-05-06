@@ -1,0 +1,132 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: azure;
+    background-color: crimson;
+}
+
+div {
+    display: grid;
+}
+
+.root-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    color: azure;
+    margin: 1em;
+    /* height: 726px; Notice! full page height */
+    /* height: 694px; Notice! height doesn't applying for phone and brakes by adding many options and for chrome 666px */
+    /* border-radius: 1.5em; */
+    /* background-color: crimson; */
+    /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); */
+}
+
+.jsx-container {
+    /* grid-column: 2/3; */
+    gap: 2em;
+    place-self: center;
+    text-align: center;
+}
+
+.title {
+    font-size: 5em;
+}
+
+.sub-title {
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.option-container {
+    grid-template-columns: 1fr;
+    gap: 2em;
+    /* grid-template-rows: repeat(3, 1fr); */
+    /* height: 318px; */
+}
+
+.option {
+    grid-template-columns: 1fr auto;
+    padding: 0.5em;
+    /* border: 1px dashed firebrick; */
+    border-radius: 0.5em;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    color: black;
+    background-color: azure;
+    text-align: start;
+}
+
+.option p {
+    align-self: center;
+}
+
+.option button {
+    color: firebrick;
+    border: 1px dashed firebrick;
+    box-shadow: none;
+    padding: 0.3em;
+}
+
+.option-msg {
+    padding: 1em;
+    font-weight: bold;
+    place-self: center;
+}
+
+.btn {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+    /* width: 50%;
+    margin: auto; */
+    padding: 0.5em;
+    border: 1px solid azure;
+    border-radius: 0.5em;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    background-color: azure;
+}
+
+.btn:active {
+    transform: translateY(1px) !important;
+}
+
+.btn:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+    color: azure;
+    transform: translateY(-2px);
+}
+
+.btn-danger:hover {
+    background-color: firebrick;
+    color: white;
+}
+
+.btn-form {
+    /* width: auto;
+    margin: 0px; */
+}
+
+.btn-form-inp:hover {
+    cursor: text;
+    color: black;
+    background-color: azure;
+}
+
+.error {
+    color: red;
+}
+
+.submit-form {
+    display: inherit;
+    place-items: inherit;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0.5em;
+}
