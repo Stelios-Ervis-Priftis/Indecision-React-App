@@ -10,6 +10,7 @@ import Header from './Components/Header'
 import AddOption from './Components/AddOption'
 import Action from './Components/Action'
 import Options from './Components/Options'
+import RemoveOptions from './Components/RemoveOptions'
 
 // Main Component State Component are wrapper and most of the logic
 class IndecisionApp extends Component {
@@ -20,7 +21,7 @@ class IndecisionApp extends Component {
         this.handleOnFormSubmit = this.handleOnFormSubmit.bind(this)
         this.handleRemoveOption = this.handleRemoveOption.bind(this)
         this.state = {
-            options: props.options
+            options: []
         }
     }
 
@@ -91,14 +92,10 @@ class IndecisionApp extends Component {
                 <Action hasOptions={this.state.options.length > 0} handleOnMakeDecision={this.handleOnMakeDecision} />
                 <Options options={this.state.options} handleRemoveOption={this.handleRemoveOption} />
                 <AddOption maxOptions={this.state.options.length >= 3} handleOnFormSubmit={this.handleOnFormSubmit} />
-                {/* <RemoveOptions handleRemoveOptions={this.handleRemoveOptions} /> */}
+                <RemoveOptions handleRemoveOptions={this.handleRemoveOptions} />
             </div>
         )
     }
-}
-
-IndecisionApp.defaultProps = {
-    options: []
 }
 
 // Render to are root div (app-root)
