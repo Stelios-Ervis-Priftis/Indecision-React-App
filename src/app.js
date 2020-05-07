@@ -2,14 +2,15 @@
 import { log, doc } from './helper'
 
 // Third party libraries
-import React from 'react'
+import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 
 // Components imports
 import AddOption from './Components/AddOption'
+import Options from './Components/Options'
 
 // Main Component State Component are wrapper and most of the logic
-class IndecisionApp extends React.Component {
+class IndecisionApp extends Component {
     constructor(props) {
         super(props)
         this.handleRemoveOptions = this.handleRemoveOptions.bind(this)
@@ -86,7 +87,7 @@ class IndecisionApp extends React.Component {
             <div className='jsx-container'>
                 {/* <Header subTitle={subTitle} /> */}
                 {/* <Action hasOptions={this.state.options.length > 0} handleOnMakeDecision={this.handleOnMakeDecision} /> */}
-                {/* <Options options={this.state.options} handleRemoveOption={this.handleRemoveOption} /> */}
+                <Options options={this.state.options} handleRemoveOption={this.handleRemoveOption} />
                 <AddOption maxOptions={this.state.options.length >= 3} handleOnFormSubmit={this.handleOnFormSubmit} />
                 {/* <RemoveOptions handleRemoveOptions={this.handleRemoveOptions} /> */}
             </div>
