@@ -6,9 +6,10 @@ import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 
 // Components imports
+import Header from './Components/Header'
 import AddOption from './Components/AddOption'
-import Options from './Components/Options'
 import Action from './Components/Action'
+import Options from './Components/Options'
 
 // Main Component State Component are wrapper and most of the logic
 class IndecisionApp extends Component {
@@ -86,7 +87,7 @@ class IndecisionApp extends Component {
         const subTitle = 'Put your life in the hands of a computer'
         return (
             <div className='jsx-container'>
-                {/* <Header subTitle={subTitle} /> */}
+                <Header subTitle={subTitle} />
                 <Action hasOptions={this.state.options.length > 0} handleOnMakeDecision={this.handleOnMakeDecision} />
                 <Options options={this.state.options} handleRemoveOption={this.handleRemoveOption} />
                 <AddOption maxOptions={this.state.options.length >= 3} handleOnFormSubmit={this.handleOnFormSubmit} />
