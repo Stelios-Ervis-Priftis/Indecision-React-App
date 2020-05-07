@@ -1,4 +1,7 @@
+// Third party libraries
 import React from 'react'
+
+// Components imports
 import Option from './Option'
 
 // Stateless Component

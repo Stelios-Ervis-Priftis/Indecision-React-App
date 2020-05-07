@@ -1,5 +1,5 @@
+// Third party libraries
 import React, { Component } from 'react'
-
 
 // State Component
 export default class AddOption extends Component {
@@ -26,8 +26,8 @@ export default class AddOption extends Component {
             <div>
                 {/* {this.state.error && <p>{this.state.error}</p>} */}
                 <form className="submit-form" onSubmit={this.handleOnFormSubmit}>
-                    <input className="btn btn-form btn-form-inp" disabled={this.props.maxOptions} type="text" name="option" placeholder={!this.state.error ? 'Write Your Option' : this.state.error} />
-                    <button className="btn btn-form" disabled={this.props.maxOptions}>Submit Your Option</button>
+                    <input className="btn btn-form btn-form-inp" /* disabled={this.props.maxOptions} */ type="text" name="option" placeholder={!this.state.error ? 'Write Your Option' : this.state.error} />
+                    <button className="btn btn-form" /* disabled={this.props.maxOptions} */>Submit Your Option</button>
                 </form>
             </div>
         )
