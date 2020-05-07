@@ -31,21 +31,22 @@ class IndecisionApp extends Component {
             const options = JSON.parse(jsonOpts)
             if (options) {
                 this.setState(() => ({ options }))
-                console.log('Fetching Data')
+                log('Fetching Data')
             }
         } catch (error) {
-            console.log('error', error)
+            log('error', error)
         }
     }
 
     componentDidUpdate(prevProps, prevState) {
-        console.log(prevState.options.length === this.state.options.length)
-        console.log(prevState.options.length)
-        console.log(this.state.options.length)
+        log(prevState.options.length === this.state.options.length)
+        log(prevState.options)
+        log(this.state.options)
         if (prevState.options.length !== this.state.options.length) {
             const jsonOpts = JSON.stringify(this.state.options)
             localStorage.setItem('options', jsonOpts)
-            console.log('Saving Data')
+            log(jsonOpts)
+            log('Saving Data')
         }
     }
 
@@ -53,7 +54,7 @@ class IndecisionApp extends Component {
         if (this.state.options) {
             const randomNum = Math.floor(Math.random() * this.state.options.length)
             const option = this.state.options[randomNum]
-            console.log(option)
+            log(option)
             this.handleRemoveOptions()
         }
     }
@@ -69,12 +70,11 @@ class IndecisionApp extends Component {
         }
 
         setErrorClass.option.classList.remove('error')
-
         this.setState((prevState) => ({ options: prevState.options.concat(option) }))
     }
 
     handleRemoveOptions() {
-        console.log('Options removed:', this.state.options)
+        log('Options removed:', this.state.options)
         this.setState(() => ({ options: [] }))
     }
 

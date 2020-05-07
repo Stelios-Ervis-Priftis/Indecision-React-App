@@ -13,7 +13,7 @@ export default class AddOption extends Component {
 
     handleOnFormSubmit(e) {
         e.preventDefault()
-        let intValue = e.target.option.value.trim(' ')
+        let intValue = e.target.option.value.trim(' ').toUpperCase()
         const error = this.props.handleOnFormSubmit(intValue)
 
         this.setState(() => ({ error: error }))
