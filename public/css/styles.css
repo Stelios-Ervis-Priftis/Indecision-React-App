@@ -36,6 +36,12 @@
         color: black !important;
         background-color: azure !important;
     }
+
+    .btn-form-inp:active {
+        color: black !important;
+        background-color: azure !important;
+    }
+
     .error {
         font-size: 10px !important;
         color: firebrick !important;
