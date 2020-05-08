@@ -1,3 +1,47 @@
+@media screen and (max-width: 992px) {
+    .btn {
+        color: azure !important;
+        background-color: #2EE59D !important;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 12px;
+        /* width: 100%;
+        margin: auto; */
+        padding: 0.5em;
+        border: 1px solid azure;
+        border-radius: 0.5em;
+        box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+    }
+    
+    .btn:active {
+        /* background-color: #2EE59D; */
+        /* box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1); */
+        color: #2EE59D !important;
+        background-color: azure !important;
+        transform: translateY(-2px) !important;
+    }
+
+    .btn-danger {
+        background-color: firebrick !important;
+        color: azure !important;
+    }
+
+    .btn-danger:active {
+        background-color: azure !important;
+        color: firebrick !important;
+    }
+
+    .btn-form-inp {
+        color: black !important;
+        background-color: azure !important;
+    }
+    .error {
+        font-size: 10px !important;
+        color: firebrick !important;
+    }
+}
+
 * {
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
@@ -5,7 +49,6 @@
 }
 
 body {
-    background-color: azure;
     background-color: crimson;
 }
 
@@ -40,9 +83,9 @@ div {
 }
 
 .sub-title {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: bold;
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 
 .option-container {
@@ -85,7 +128,7 @@ div {
     cursor: pointer;
     font-weight: bold;
     font-size: 12px;
-    /* width: 50%;
+    /* width: 100%;
     margin: auto; */
     padding: 0.5em;
     border: 1px solid azure;
@@ -123,7 +166,7 @@ div {
 }
 
 .error {
-    color: red;
+    color: firebrick;
 }
 
 .submit-form {

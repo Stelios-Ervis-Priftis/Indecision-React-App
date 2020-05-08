@@ -66,10 +66,10 @@ export default class IndecisionApp extends Component {
         const setErrorClass = document.getElementsByClassName('btn-form-inp')
         if (!option) {
             setErrorClass.option.classList.add('error')
-            return 'Enter valid value to add item'
+            return 'Enter valid value'
         } else if (this.state.options.indexOf(option) > -1) {
             setErrorClass.option.classList.add('error')
-            return 'This option already exists'
+            return 'This option already exist'
         }
 
         setErrorClass.option.classList.remove('error')
@@ -88,10 +88,11 @@ export default class IndecisionApp extends Component {
     }
 
     render() {
-        const subTitle = `You can't take a decision? Put your life in the hands of a computer!`
+        const subTitle_1 = `You can't take a decision?`
+        const subTitle_2 = `Put your life in the hands of a computer!`
         return (
             <div className='jsx-container'>
-                <Header subTitle={subTitle} />
+                <Header subTitle_1={subTitle_1} subTitle_2={subTitle_2} />
                 <Action hasOptions={this.state.options.length > 0} handleOnMakeDecision={this.handleOnMakeDecision} />
                 <Options options={this.state.options} handleRemoveOption={this.handleRemoveOption} />
                 <AddOption maxOptions={this.state.options.length >= 3} handleOnFormSubmit={this.handleOnFormSubmit} />
