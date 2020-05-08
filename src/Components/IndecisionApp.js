@@ -20,7 +20,11 @@ export default class IndecisionApp extends Component {
         this.handleOnFormSubmit = this.handleOnFormSubmit.bind(this)
         this.handleRemoveOption = this.handleRemoveOption.bind(this)
         this.state = {
-            options: []
+            options: [
+                "What Movie?",
+                "What Food?",
+                "What Clothes?"
+            ]
         }
     }
 
@@ -29,7 +33,7 @@ export default class IndecisionApp extends Component {
             const jsonOpts = localStorage.getItem('options')
             const options = JSON.parse(jsonOpts)
             if (options) {
-                this.setState(() => ({ options }))
+                this.setState((prevState) => ({ options: prevState.options }))
                 log('Fetching Data')
             }
         } catch (error) {
@@ -84,7 +88,7 @@ export default class IndecisionApp extends Component {
     }
 
     render() {
-        const subTitle = 'Put your life in the hands of a computer'
+        const subTitle = `You can't take a decision? Put your life in the hands of a computer!`
         return (
             <div className='jsx-container'>
                 <Header subTitle={subTitle} />

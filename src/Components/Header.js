@@ -4,7 +4,7 @@ import React from 'react'
 // Stateless Component
 const Header = (props) => {
     return (
-        <div>
+        <div className="header-container">
             <h1 className="title">{props.title}</h1>
             <h2 className="sub-title">{props.subTitle}</h2>
         </div>
