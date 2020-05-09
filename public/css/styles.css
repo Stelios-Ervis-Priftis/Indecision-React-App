@@ -1,4 +1,18 @@
+/* Media Queries */
 @media screen and (max-width: 992px) {
+    .sub-header-container {
+        background-color: azure;
+        color: black;
+        border-radius: 0.3em;
+        gap: 1em;
+        padding: 0.5em;
+        box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+        /* border: 1px dashed black; */
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+    }
+
     .btn {
         color: azure !important;
         background-color: #2EE59D !important;
@@ -7,7 +21,7 @@
         font-size: 12px;
         /* width: 100%;
         margin: auto; */
-        padding: 0.5em;
+        padding: 1em !important;
         border: 1px solid azure;
         border-radius: 0.5em;
         box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
@@ -42,12 +56,19 @@
         background-color: azure !important;
     }
 
+    .option button {
+        color: firebrick;
+        border: 1px dashed firebrick;
+        box-shadow: none !important;
+        padding: 0.3em !important;
+    }
+
     .error {
-        font-size: 10px !important;
         color: firebrick !important;
     }
 }
 
+/* Normal CSS */
 * {
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
@@ -91,7 +112,8 @@ div {
 .sub-title {
     font-size: 13px;
     font-weight: bold;
-    /* text-decoration: underline; */
+    border-bottom: 1px dashed;
+    padding-bottom: 0.2em;
 }
 
 .option-container {

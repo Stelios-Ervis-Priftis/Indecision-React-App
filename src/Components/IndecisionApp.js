@@ -69,7 +69,7 @@ export default class IndecisionApp extends Component {
             return 'Enter valid value'
         } else if (this.state.options.indexOf(option) > -1) {
             setErrorClass.option.classList.add('error')
-            return 'This option already exist'
+            return 'Already exist'
         }
 
         setErrorClass.option.classList.remove('error')
