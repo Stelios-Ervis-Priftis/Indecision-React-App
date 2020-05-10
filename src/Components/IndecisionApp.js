@@ -20,36 +20,12 @@ export default class IndecisionApp extends Component {
             "What Clothes?"
         ]
     }
-    componentDidMount = () => {
-        try {
-            const jsonOpts = localStorage.getItem('options')
-            const options = JSON.parse(jsonOpts)
-            if (options) {
-                this.setState((prevState) => ({ options: prevState.options }))
-                log('Fetching Data')
-            }
-        } catch (error) {
-            log('error', error)
-        }
-    }
-
-    componentDidUpdate = (prevProps, prevState) => {
-        log(prevState.options.length === this.state.options.length)
-        log(prevState.options)
-        log(this.state.options)
-        if (prevState.options.length !== this.state.options.length) {
-            const jsonOpts = JSON.stringify(this.state.options)
-            localStorage.setItem('options', jsonOpts)
-            log(jsonOpts)
-            log('Saving Data')
-        }
-    }
 
     handleOnMakeDecision = () => {
         if (this.state.options) {
             const randomNum = Math.floor(Math.random() * this.state.options.length)
             const option = this.state.options[randomNum]
-            log(option)
+            log(`Option: ${option}`)
             this.handleRemoveOptions()
         }
     }
@@ -77,6 +53,31 @@ export default class IndecisionApp extends Component {
         this.setState((prevState) => ({
             options: prevState.options.filter((option) => optionToRemove !== option)
         }))
+    }
+
+    componentDidMount() {
+        try {
+            const jsonOpts = localStorage.getItem('options')
+            const options = JSON.parse(jsonOpts)
+            if (options) {
+                this.setState((prevState) => ({ options: prevState.options }))
+                log('Fetching Data')
+            }
+        } catch (error) {
+            log('error', error)
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        log(prevState.options.length === this.state.options.length)
+        log(prevState.options)
+        log(this.state.options)
+        if (prevState.options.length !== this.state.options.length) {
+            const jsonOpts = JSON.stringify(this.state.options)
+            localStorage.setItem('options', jsonOpts)
+            log(jsonOpts)
+            log('Saving Data')
+        }
     }
 
     render() {
