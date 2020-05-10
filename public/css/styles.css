@@ -1,24 +1,21 @@
 /* Media Queries */
 @media screen and (max-width: 992px) {
-    .sub-header-container {
-        background-color: azure;
-        color: black;
-        border-radius: 0.3em;
-        gap: 1em;
-        padding: 0.5em;
-        box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
-        /* border: 1px dashed black; */
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, 1fr);
+    .title {
+        font-size: 56px !important;
     }
 
+    .sub-title {
+        font-size: 12px !important;
+        font-weight: bold;
+        border-bottom: 1px dashed;
+        padding-bottom: 0.2em;
+    }
     .btn {
         color: azure !important;
         background-color: #2EE59D !important;
         cursor: pointer;
         font-weight: bold;
-        font-size: 12px;
+        font-size: 12px !important;
         /* width: 100%;
         margin: auto; */
         padding: 1em !important;
@@ -105,12 +102,25 @@ div {
     gap: 1em;
 }
 
+.sub-header-container {
+    background-color: azure;
+    color: black;
+    border-radius: 0.3em;
+    gap: 1em;
+    padding: 0.5em;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+    /* border: 1px dashed black; */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+}
+
 .title {
-    font-size: 56px;
+    font-size: 80px;
 }
 
 .sub-title {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: bold;
     border-bottom: 1px dashed;
     padding-bottom: 0.2em;
@@ -155,10 +165,10 @@ div {
 .btn {
     cursor: pointer;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 13px;
     /* width: 100%;
     margin: auto; */
-    padding: 0.5em;
+    padding: 1em;
     border: 1px solid azure;
     border-radius: 0.5em;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
