@@ -13,22 +13,14 @@ import RemoveOptions from './RemoveOptions'
 
 // Main Component State Component are wrapper and most of the logic
 export default class IndecisionApp extends Component {
-    constructor(props) {
-        super(props)
-        this.handleRemoveOptions = this.handleRemoveOptions.bind(this)
-        this.handleOnMakeDecision = this.handleOnMakeDecision.bind(this)
-        this.handleOnFormSubmit = this.handleOnFormSubmit.bind(this)
-        this.handleRemoveOption = this.handleRemoveOption.bind(this)
-        this.state = {
-            options: [
-                "What Movie?",
-                "What Food?",
-                "What Clothes?"
-            ]
-        }
+    state = {
+        options: [
+            "What Movie?",
+            "What Food?",
+            "What Clothes?"
+        ]
     }
-
-    componentDidMount() {
+    componentDidMount = () => {
         try {
             const jsonOpts = localStorage.getItem('options')
             const options = JSON.parse(jsonOpts)
@@ -41,7 +33,7 @@ export default class IndecisionApp extends Component {
         }
     }
 
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate = (prevProps, prevState) => {
         log(prevState.options.length === this.state.options.length)
         log(prevState.options)
         log(this.state.options)
@@ -53,7 +45,7 @@ export default class IndecisionApp extends Component {
         }
     }
 
-    handleOnMakeDecision() {
+    handleOnMakeDecision = () => {
         if (this.state.options) {
             const randomNum = Math.floor(Math.random() * this.state.options.length)
             const option = this.state.options[randomNum]
@@ -62,7 +54,7 @@ export default class IndecisionApp extends Component {
         }
     }
 
-    handleOnFormSubmit(option) {
+    handleOnFormSubmit = (option) => {
         const setErrorClass = document.getElementsByClassName('btn-form-inp')
         if (!option) {
             setErrorClass.option.classList.add('error')
@@ -76,12 +68,12 @@ export default class IndecisionApp extends Component {
         this.setState((prevState) => ({ options: prevState.options.concat(option) }))
     }
 
-    handleRemoveOptions() {
+    handleRemoveOptions = () => {
         log('Options removed:', this.state.options)
         this.setState(() => ({ options: [] }))
     }
 
-    handleRemoveOption(optionToRemove) {
+    handleRemoveOption = (optionToRemove) => {
         this.setState((prevState) => ({
             options: prevState.options.filter((option) => optionToRemove !== option)
         }))

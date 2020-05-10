@@ -3,15 +3,11 @@ import React, { Component } from 'react'
 
 // State Component
 export default class AddOption extends Component {
-    constructor(props) {
-        super(props)
-        this.handleOnFormSubmit = this.handleOnFormSubmit.bind(this)
-        this.state = {
-            error: undefined
-        }
+    state = {
+        error: undefined
     }
 
-    handleOnFormSubmit(e) {
+    handleOnFormSubmit = (e) => {
         e.preventDefault()
         let intValue = e.target.option.value.trim(' ').toUpperCase()
         const error = this.props.handleOnFormSubmit(intValue)
