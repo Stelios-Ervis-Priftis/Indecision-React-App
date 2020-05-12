@@ -10,6 +10,7 @@ const OptionModal = (props) => (
             contentLabel={"Selected Option"}
             ariaHideApp={false}
         >
+        <p>Computer decided for you...</p>
         {!!props.selectedOption && <p>{props.selectedOption}</p>}
             <button className="btn" onClick={props.handleClearSelectedOption}>Okay</button>
         </Modal>
