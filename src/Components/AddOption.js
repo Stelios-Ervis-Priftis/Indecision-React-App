@@ -22,7 +22,7 @@ export default class AddOption extends Component {
             <div>
                 {/* {this.state.error && <p>{this.state.error}</p>} */}
                 <form className="submit-form" onSubmit={this.handleOnFormSubmit}>
-                    <input className="btn btn-form btn-form-inp" /* disabled={this.props.maxOptions} */ type="text" name="option" placeholder={!this.state.error ? 'Write Your Option' : this.state.error} />
+                    <input className="btn btn-form btn-form-inp" /* disabled={this.props.maxOptions} */ type="text" name="option" placeholder={this.state.error ? this.state.error : 'Write Your Option'} />
                     <button className="btn btn-form" /* disabled={this.props.maxOptions} */>Submit Your Option</button>
                 </form>
             </div>

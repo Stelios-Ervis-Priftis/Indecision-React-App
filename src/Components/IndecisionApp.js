@@ -10,6 +10,7 @@ import AddOption from './AddOption'
 import Action from './Action'
 import Options from './Options'
 import RemoveOptions from './RemoveOptions'
+import OptionModal from './OptionModal'
 
 // Main Component State Component are wrapper and most of the logic
 export default class IndecisionApp extends Component {
@@ -18,16 +19,21 @@ export default class IndecisionApp extends Component {
             "What Movie?",
             "What Food?",
             "What Clothes?"
-        ]
+        ],
+        selectedOption: undefined
     }
-
+    
     handleOnMakeDecision = () => {
         if (this.state.options) {
             const randomNum = Math.floor(Math.random() * this.state.options.length)
             const option = this.state.options[randomNum]
-            log(`Option: ${option}`)
+            this.setState(() => ({ selectedOption: option }))
             this.handleRemoveOptions()
         }
+    }
+    
+    handleClearSelectedOption = () => {
+        this.setState(() => ({ selectedOption: undefined }))
     }
 
     handleOnFormSubmit = (option) => {
@@ -45,7 +51,7 @@ export default class IndecisionApp extends Component {
     }
 
     handleRemoveOptions = () => {
-        log('Options removed:', this.state.options)
+        // log('Options removed:', this.state.options)
         this.setState(() => ({ options: [] }))
     }
 
@@ -69,13 +75,13 @@ export default class IndecisionApp extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        log(prevState.options.length === this.state.options.length)
-        log(prevState.options)
-        log(this.state.options)
+        // log(prevState.options.length === this.state.options.length)
+        // log(prevState.options)
+        // log(this.state.options)
         if (prevState.options.length !== this.state.options.length) {
             const jsonOpts = JSON.stringify(this.state.options)
             localStorage.setItem('options', jsonOpts)
-            log(jsonOpts)
+            // log(jsonOpts)
             log('Saving Data')
         }
     }
@@ -90,6 +96,7 @@ export default class IndecisionApp extends Component {
                 <Options options={this.state.options} handleRemoveOption={this.handleRemoveOption} />
                 <AddOption maxOptions={this.state.options.length >= 3} handleOnFormSubmit={this.handleOnFormSubmit} />
                 <RemoveOptions handleRemoveOptions={this.handleRemoveOptions} />
+                <OptionModal selectedOption={this.state.selectedOption} handleClearSelectedOption={this.handleClearSelectedOption}/>
             </div>
         )
     }
