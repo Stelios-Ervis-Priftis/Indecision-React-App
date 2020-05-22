@@ -1,4 +1,7 @@
 @media screen and (max-width: 768px) {
+    *:focus {
+        outline: none;
+    }
     body {
         font-family: 'Courier New', Courier, monospace;
         font-size: 1.6em !important;
