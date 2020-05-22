@@ -1,0 +1,40 @@
+.option {
+    display: flex;
+    place-content: space-between;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid;
+
+    &__text {
+        font-weight: 500;
+        text-transform: capitalize;
+        word-break: break-all;
+        width: 19.5em;
+    }
+
+    &__btn--danger {
+        width: 3em;
+        height: 100%;
+        position: absolute;
+        right: -3em;
+        color: $white;
+        border-radius: 0px;
+        background: transparent;
+        -webkit-transition: right .5s ease, background-color .4s ease;
+        -moz-transition: right .5s ease, background-color .4s ease;
+        -o-transition: right .5s ease, background-color .4s ease;
+        transition: right .5s ease, background-color .4s ease;
+
+        svg {
+            height: 100%;
+        }
+    }
+
+    &:hover &__btn--danger {
+        height: 100%;
+        right: 0;
+        transform: translateY(0px);
+        box-shadow: none;
+        background: #D43933;
+    }
+}

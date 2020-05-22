@@ -1,6 +1,6 @@
 import React from 'react'
 import Modal from 'react-modal'
-import { log } from '../helper'
+import TypeIt from 'typeit-react'
 
 const OptionModal = (props) => (
     <div>
@@ -8,11 +8,20 @@ const OptionModal = (props) => (
             isOpen={!!props.selectedOption}
             onRequestClose={props.handleClearSelectedOption}
             contentLabel={"Selected Option"}
+            // closeTimeoutMS={700}
             ariaHideApp={false}
         >
-        <p>Computer decided for you...</p>
-        {!!props.selectedOption && <p>{props.selectedOption}</p>}
-            <button className="btn" onClick={props.handleClearSelectedOption}>Okay</button>
+        <p>Computer decided for you!</p>
+        {!!props.selectedOption &&
+            <TypeIt element={"p"} options={{
+                strings: [`${props.selectedOption}`],
+                speed: 50,
+                cursor: false,
+                lifeLike: true,
+                waitUntilVisible: true
+            }} />
+        }
+        <button className="btn btn-modal" onClick={props.handleClearSelectedOption}>Okay</button>
         </Modal>
     </div>
     

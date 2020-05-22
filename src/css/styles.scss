@@ -1,0 +1,289 @@
+// /* Media Queries */
+// @media screen and (max-width: 992px) {
+
+//     body {
+//         -webkit-user-select: none;  
+//         -moz-user-select: none;    
+//         -ms-user-select: none;      
+//         user-select: none;
+//     }
+
+//     .title {
+//         font-size: 56px !important;
+//     }
+
+//     .sub-title {
+//         font-size: 12px !important;
+//         font-weight: bold;
+//         border-bottom: 1px dashed;
+//         padding-bottom: 0.2em;
+//     }
+    
+//     .btn {
+//         color: azure !important;
+//         background-color: #2EE59D !important;
+//         cursor: pointer;
+//         font-weight: bold;
+//         font-size: 12px !important;
+//         /* width: 100%;
+//         margin: auto; */
+//         padding: 1em !important;
+//         border: 1px solid azure;
+//         border-radius: 0.5em;
+//         box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+//         transition: all 0.3s ease 0s;
+//     }
+    
+//     .btn:active {
+//         color: #2EE59D !important;
+//         background-color: azure !important;
+//         transform: translateY(-2px) !important;
+//     }
+
+//     .btn-danger {
+//         background-color: firebrick !important;
+//         color: azure !important;
+//     }
+
+//     .btn-danger:active {
+//         background-color: azure !important;
+//         color: firebrick !important;
+//     }
+
+//     .btn-form-inp {
+//         color: black !important;
+//         background-color: azure !important;
+//     }
+
+//     .btn-form-inp:active {
+//         color: black !important;
+//         background-color: azure !important;
+//     }
+
+//     .option button {
+//         color: firebrick;
+//         border: 1px dashed firebrick;
+//         box-shadow: none !important;
+//         padding: 0.3em !important;
+//     }
+
+//     .error {
+//         color: firebrick !important;
+//     }
+
+//     .ReactModal__Content--after-open {
+//         position: absolute;
+//         top: 70px !important;
+//         left: 40px !important;
+//         right: 40px !important;
+//         bottom: 167px !important;
+//         gap: 7em !important;
+//     }
+
+//     .btn-modal {
+//         width: 100% !important;
+//     }
+// }
+
+// /* Normal CSS */
+// * {
+//     font-family: 'Courier New', Courier, monospace;
+//     margin: 0;
+//     padding: 0;
+// }
+
+// body {
+//     background-color: crimson;
+// }
+
+// div {
+//     display: grid;
+// }
+
+// .root-container {
+//     grid-template-columns: 1fr;
+//     grid-template-rows: auto;
+//     color: azure;
+//     margin: 1em;
+// }
+
+// .jsx-container {
+//     gap: 3em;
+//     place-self: center;
+//     text-align: center;
+// }
+
+// .header-container {
+//     gap: 1em;
+// }
+
+// .sub-header-container {
+//     background-color: azure;
+//     color: black;
+//     border-radius: 0.3em;
+//     gap: 1em;
+//     padding: 0.5em;
+//     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+//     display: grid;
+//     grid-template-columns: 1fr;
+//     grid-template-rows: repeat(2, 1fr);
+// }
+
+// .title {
+//     font-size: 80px;
+// }
+
+// .sub-title {
+//     font-size: 15px;
+//     font-weight: bold;
+//     border-bottom: 1px dashed;
+//     padding-bottom: 0.2em;
+// }
+
+// .option-container {
+//     grid-template-columns: 1fr;
+//     gap: 2em;
+// }
+
+// .option {
+//     grid-template-columns: 1fr auto;
+//     padding: 0.5em;
+//     border-radius: 0.5em;
+//     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+//     font-weight: bold;
+//     color: black;
+//     background-color: azure;
+//     text-align: start;
+// }
+
+// .option p {
+//     font-size: 13px;
+//     align-self: center;
+// }
+
+// .option button {
+//     color: firebrick;
+//     border: 1px dashed firebrick;
+//     box-shadow: none;
+//     padding: 0.3em;
+// }
+
+// .option-msg {
+//     padding: 1em;
+//     font-weight: bold;
+//     place-self: center;
+// }
+
+// .btn {
+//     cursor: pointer;
+//     font-weight: bold;
+//     font-size: 13px;
+//     padding: 1em;
+//     border: 1px solid azure;
+//     border-radius: 0.5em;
+//     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+//     transition: all 0.3s ease 0s;
+//     background-color: azure;
+// }
+
+// .btn:active {
+//     transform: translateY(1px) !important;
+// }
+
+// .btn:hover {
+//     background-color: #2EE59D;
+//     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+//     color: azure;
+//     transform: translateY(-2px);
+// }
+
+// .btn-danger:hover {
+//     background-color: firebrick;
+//     color: white;
+// }
+
+// .btn-form {
+//     /* width: auto;
+//     margin: 0px; */
+// }
+
+// .btn-form-inp:hover {
+//     cursor: text;
+//     color: black;
+//     background-color: azure;
+// }
+
+// .error {
+//     color: firebrick;
+// }
+
+// .submit-form {
+//     display: inherit;
+//     place-items: inherit;
+//     grid-template-columns: 1fr 1fr;
+//     grid-template-rows: 1fr;
+//     gap: 0.5em;
+// }
+
+// /* Modal Style */
+// .ReactModal__Content {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     backgroundColor: rgba(255, 255, 255, 0.75);
+// }
+
+// .ReactModal__Content--after-open {
+//     position: absolute;
+//     top: 100px;
+//     left: 100px;
+//     right: 100px;
+//     bottom: 100px;
+//     border: 1px solid azure;
+//     background: azure;
+//     overflow: auto;
+//     -webkit-overflow-scrolling: touch;
+//     border-radius: 0.5em;
+//     outline: none;
+//     padding: 20px;
+//     display: grid;
+//     grid-template-columns: 1fr;
+//     grid-template-rows: repeat(3, auto);
+//     gap: 0em;
+//     place-items: center;
+//     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+// }
+
+// .modal-container p {
+//     font-size: 1.5em;
+//     font-weight: bold;
+//     text-align: center;
+// }
+
+// .btn-modal {
+//     width: 50%;
+// }
+
+// .ReactModal__Overlay {
+//     opacity: 0;
+//     transition: 500ms ease;
+// }
+
+// .ReactModal__Overlay--after-open{
+//     opacity: 1;
+// }
+
+// .ReactModal__Overlay--before-close{
+//     opacity: 0;
+// }
+
+@import './base/settings';
+@import './base/base';
+@import './components/header';
+@import './components/action';
+@import './components/options';
+@import './components/option';
+@import './components/addOption';
+@import './components/modal';

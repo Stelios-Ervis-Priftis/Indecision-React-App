@@ -1,0 +1,40 @@
+.widget {
+    &__header {
+        display: flex;
+        place-content: space-between;
+        position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid;
+
+        &__title {
+            font-size: 1em;
+            align-self: center;
+        }
+
+        &__btn--danger {
+            font-size: 0.9em;
+            color: $white;
+            background-color: $red;
+            position: relative;
+            right: 0;
+            width: 7em;
+            -webkit-transition: right .4s ease, background-color .4s ease;
+            -moz-transition: right .4s ease, background-color .4s ease;
+            -o-transition: right .4s ease, background-color .4s ease;
+            transition: right .4s ease, background-color .4s ease;
+        }
+
+        &__btn--danger:disabled {
+            background: transparent;
+            position: relative;
+            right: -7em;
+        }
+    }
+
+    &__message {
+        color: $black;
+        padding: 1em;
+        text-align: center;
+        text-transform: capitalize;
+    }
+}

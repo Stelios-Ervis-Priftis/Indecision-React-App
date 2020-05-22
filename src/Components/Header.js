@@ -3,33 +3,29 @@ import React from 'react'
 import TypeIt from 'typeit-react'
 
 // Stateless Component
-const Header = (props) => (
-    <div className="header-container">
-        <h1 className="title">{props.title}</h1>
-        {/* <h2 className="sub-title">{props.subTitle_1}</h2> */}
-        <div className="sub-header-container">
-            <TypeIt className="sub-title" element={"h2"} options={{
-                strings: [`${props.subTitle_1}`],
-                startDelay: 1000,
-                speed: 50,
-                cursor: false,
-                lifeLike: true,
-                waitUntilVisible: true
-            }} />
-            <TypeIt className="sub-title" element={"h3"} options={{
-                strings: [`${props.subTitle_2}`],
-                startDelay: 2600,
-                speed: 50,
-                cursor: false,
-                lifeLike: true,
-                waitUntilVisible: true
-            }} />
-        </div>
+const Header = ({title, subTitleFirst, subTitleSecond}) => (
+    <div className="header">
+        <h1 className="header__title">{title}</h1>
+        <TypeIt
+            className="header__subTitle"
+            options={{ speed: 50, cursor: false, lifeLike: false, waitUntilVisible: true }}
+            getBeforeInit={instance => {
+                instance
+                    .type(`${subTitleFirst}`)
+                    .pause(1500)
+                    .break(`${subTitleSecond}`)
+                    .type(`${subTitleSecond}`)
+
+                return instance;
+            }}
+        />
     </div>
 )
 
 Header.defaultProps = {
-    title: 'Indecision'
+    title: 'Indecision',
+    subTitleFirst: 'Struggling to take a decision?',
+    subTitleSecond: 'Put your life in the hands of a computer!'
 }
 
 export default Header

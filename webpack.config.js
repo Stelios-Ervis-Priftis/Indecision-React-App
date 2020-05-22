@@ -10,9 +10,16 @@ module.exports = {
         rules: [{
             test: /\.js$/,
             exclude: /node_modules/,
-            use: {
+            use: { 
                 loader: 'babel-loader'
             }
+        }, {
+            test: /\.s?css$/,
+            use: [
+                'style-loader',
+                'css-loader',
+                'sass-loader'
+            ]
         }]
     },
     // source map browser about the file not the bundle (Useful for errors)

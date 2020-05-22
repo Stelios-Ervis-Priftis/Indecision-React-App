@@ -1,5 +1,6 @@
 // Third party libraries
 import React, { Component } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // State Component
 export default class AddOption extends Component {
@@ -9,7 +10,7 @@ export default class AddOption extends Component {
 
     handleOnFormSubmit = (e) => {
         e.preventDefault()
-        let intValue = e.target.option.value.trim(' ').toUpperCase()
+        let intValue = e.target.option.value.trim(' ')
         const error = this.props.handleOnFormSubmit(intValue)
 
         this.setState(() => ({ error: error }))
@@ -21,9 +22,12 @@ export default class AddOption extends Component {
         return (
             <div>
                 {/* {this.state.error && <p>{this.state.error}</p>} */}
-                <form className="submit-form" onSubmit={this.handleOnFormSubmit}>
-                    <input className="btn btn-form btn-form-inp" /* disabled={this.props.maxOptions} */ type="text" name="option" placeholder={this.state.error ? this.state.error : 'Write Your Option'} />
-                    <button className="btn btn-form" /* disabled={this.props.maxOptions} */>Submit Your Option</button>
+                <form className="addOption" onSubmit={this.handleOnFormSubmit}>
+                    <input className="addOption__input" /* disabled={this.props.maxOptions} */ type="text" name="option" placeholder={this.state.error ? this.state.error : 'Write Your Option'} />
+                    <button className="btn addOption__btn--mod" /* disabled={this.props.maxOptions} */>
+                        <FontAwesomeIcon icon="plus-circle" />
+                    </button>
+                    <div className="addOption__underline"></div>
                 </form>
             </div>
         )

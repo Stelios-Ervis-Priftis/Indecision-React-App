@@ -1,0 +1,11 @@
+.action {
+    &__action--btn {
+        background-color: $green;
+        color: $white;
+    }
+    &__action--btn:disabled {
+        opacity: .5;
+        background-color: darken($color: $green, $amount: 10);
+        color: $white;
+    }
+}
