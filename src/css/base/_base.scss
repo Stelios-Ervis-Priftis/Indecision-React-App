@@ -25,14 +25,15 @@ body {
     font-size: 2.3em;
     background-color: $white;
     color: $black;
+    @include disable-selection;
 }
 
 div {
     display: grid;
 }
 
-form {
-    display: grid;
+button:focus, input:focus, textarea:focus, select:focus {
+    outline: none !important;;
 }
 
 .container {
