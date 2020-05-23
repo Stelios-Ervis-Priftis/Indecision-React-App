@@ -33,16 +33,16 @@ export default class IndecisionApp extends Component {
     }
 
     handleOnFormSubmit = (option) => {
-        // const setErrorClass = document.getElementsByClassName('btn-form-inp')
+        const setWarningClass = document.getElementsByClassName('addOption__input')
+        
         if (!option) {
-            // setErrorClass.option.classList.add('error')
+            setWarningClass.option.classList.add('warning-message')
             return 'Enter valid value'
         } else if (this.state.options.indexOf(option) > -1) {
-            // setErrorClass.option.classList.add('error')
+            setWarningClass.option.classList.add('warning-message')
             return 'Already exist'
         }
-
-        // setErrorClass.option.classList.remove('error')
+        
         this.setState((prevState) => ({ options: prevState.options.concat(option) }))
     }
 
