@@ -24,23 +24,23 @@ export default class IndecisionApp extends Component {
             const randomNum = Math.floor(Math.random() * this.state.options.length)
             const option = this.state.options[randomNum]
             this.setState(() => ({ selectedOption: option }))
-            this.handleRemoveOptions()
         }
     }
     
     handleClearSelectedOption = () => {
         this.setState(() => ({ selectedOption: undefined }))
+        this.handleRemoveOptions()
     }
 
     handleOnFormSubmit = (option) => {
         const setWarningClass = document.getElementsByClassName('addOption__input')
-        
+
         if (!option) {
             setWarningClass.option.classList.add('warning-message')
             return 'Enter valid value'
         } else if (this.state.options.indexOf(option) > -1) {
             setWarningClass.option.classList.add('warning-message')
-            return 'Already exist'
+            return `Already exist, [${option}]`
         }
         
         this.setState((prevState) => ({ options: prevState.options.concat(option) }))

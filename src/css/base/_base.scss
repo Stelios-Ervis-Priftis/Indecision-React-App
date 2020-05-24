@@ -1,4 +1,57 @@
-@media screen and (max-width: 768px) {
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+      *:focus {
+        outline: none;
+    }
+    body {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.4em !important;
+        background-color: $white;
+        color: $black;
+    }
+
+    .header {
+        margin-top: 1em !important;
+        gap: 1em;
+    }
+
+    .container {
+        gap: 2em !important;
+    }
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    *:focus {
+        outline: none;
+    }
+    body {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.6em !important;
+        background-color: $white;
+        color: $black;
+    }
+
+    .header {
+        margin-top: 1em !important;
+        gap: 1em;
+    }
+
+    .container {
+        gap: 2em !important;
+    }
+}
+
+/* ----------- iPhone X ----------- */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
     *:focus {
         outline: none;
     }
@@ -37,6 +90,21 @@ div {
 
 button:focus, input:focus, textarea:focus, select:focus {
     outline: none !important;;
+}
+
+.loader {
+    place-content: center;
+    font-size: 5em;
+    gap: 0.2em;
+    height: 736px;
+    svg {
+        place-self: center;
+    }
+    p {
+        font-size: .5em;
+        margin: 0;
+        padding: 0;
+    }
 }
 
 .container {
