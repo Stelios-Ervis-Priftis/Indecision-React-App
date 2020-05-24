@@ -1,16 +1,17 @@
 .addOption {
-    // display: flex;
-    // place-content: space-between;
-    // border-bottom: 1px solid;
     display: grid;
-    grid-template-columns: 1fr 0fr;
+    grid-template-columns: 1fr 1fr;
+    position: fixed;
+    bottom: 0;
+    width: 22.5em;
+    background-color: $white;
 
     &__input {
         place-self: center;
-        width: 100%;
+        width: 19em;
         height: 2em;
         border: none;
-        padding-left: 0.5em;
+        // padding-left: 0.5em;
         border-radius: 0;
         outline: none;
         background-color: $white;
@@ -26,8 +27,6 @@
     }
 
     &__btn--mod {
-        // width: 15%;
-        width: 1.5em;
         font-size: 1.7em;
         background-color: $white;
         color: $blue;

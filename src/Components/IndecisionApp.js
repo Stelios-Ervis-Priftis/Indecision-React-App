@@ -47,7 +47,7 @@ export default class IndecisionApp extends Component {
     }
 
     handleRemoveOptions = () => {
-        log('Options removed:', this.state.options)
+        // log('Options removed:', this.state.options)
         this.setState(() => ({ options: [] }))
     }
 
@@ -88,7 +88,7 @@ export default class IndecisionApp extends Component {
                 <Action hasOptions={this.state.options.length > 0} handleOnMakeDecision={this.handleOnMakeDecision} />
                 <Options options={this.state.options} handleRemoveOption={this.handleRemoveOption} handleRemoveOptions={this.handleRemoveOptions} />
                 <AddOption maxOptions={this.state.options.length >= 3} handleOnFormSubmit={this.handleOnFormSubmit} />
-                <OptionModal selectedOption={this.state.selectedOption} handleClearSelectedOption={this.handleClearSelectedOption}/>
+                <OptionModal selectedOption={this.state.selectedOption} handleClearSelectedOption={this.handleClearSelectedOption} />
             </div>
         )
     }
